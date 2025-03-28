@@ -7,16 +7,22 @@
     body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}
     h1,h2,h3{line-height:1.2}
     a { display: block; margin-bottom: 5px; }
-    pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; }
+    pre { background-color: #f0f0f0; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
     </style>
     <title>Termux User Repository PyPI</title>
 </head>
 <body>
     <h1>Termux User Repository PyPI Index</h1>
     <p>Unofficial pre-compiled Python wheels for Termux on aarch64 (Android 7+).</p>
-    <p>Use this index with pip:</p>
+    <p>Use this index with pip/uv:</p>
     <pre>pip install --upgrade pip 
-pip install --extra-index-url https://termux-user-repository.github.io/pypi/ SomePackage</pre>
+# or use uv: uv pip install --upgrade pip
+
+# Install packages:
+pip install --extra-index-url https://guspix.github.io/pypi/ SomePackage
+# OR with uv:
+uv pip install --extra-index-url https://guspix.github.io/pypi/ SomePackage</pre>
+    <p><strong>Note:</strong> This index provides wheels originally built for <code>linux_aarch64</code>, relabeled and served as <code>android_24_aarch64</code> for compatibility with tools like <code>uv</code> in Termux. Compatibility is not guaranteed for all packages.</p>
     <h2>Packages</h2>
     <a href="aioquic/">aioquic</a><br/>
     <a href="brotli/">brotli</a><br/>
