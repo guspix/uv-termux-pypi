@@ -23,7 +23,7 @@ on:
 
 jobs:
   generate-pypi-pages:
-    if: github.repository == 'termux-user-repository/pypi'
+    if: github.repository == 'guspix/uv-termux-pypi'
     runs-on: ubuntu-latest
     concurrency: pypi_pages_generation
     steps:
@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.name "TUR Github Actions"
+          git config --global user.name "Guspix Github Actions"
           git config --global user.email "abc@example.com"
           git add ./docs
           git commit -m "update(pages): regenerate pages"
