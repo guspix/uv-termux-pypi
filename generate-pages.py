@@ -137,7 +137,7 @@ def generate_packages_index(packages_dict):
             needs_local_copy = False
 
             # Check if this wheel needs local download and renaming
-            if "linux_aarch64" in wheel_name:
+            if "linux_aarch64" in wheel_name and "pydantic" in wheel_name:
                 needs_local_copy = True
                 display_name = wheel_name.replace("linux_aarch64", "android_24_aarch64")
                 # Place the renamed wheel directly inside DOCS_DIR
