@@ -148,7 +148,7 @@ def generate_packages_index(packages_dict):
                     # Check if this wheel needs local download and renaming
                     if "linux_aarch64" in wheel_name and (
                         any(package in wheel_name for package in PACKAGES_LIST)
-                    ):
+                    ) and "cp312" in wheel_name:
                         needs_local_copy = True
                         display_name = wheel_name.replace(
                             "linux_aarch64", "android_24_aarch64"
