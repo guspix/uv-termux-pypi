@@ -12,7 +12,7 @@ import shutil  # Needed for efficient file copying
 
 WHEELS_RELEASE_URL = "https://api.github.com/repos/termux-user-repository/pypi-wheel-builder/releases/latest"
 DOCS_DIR = "docs"  # Define docs directory globally for consistency
-PACKAGES_LIST = ["pydantic", "numpy", "pillow"]
+PACKAGES_LIST = ["pydantic", "numpy", "pillow", "scipy"]
 
 
 # --- Helper Function for Downloading ---
