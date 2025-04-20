@@ -12,6 +12,7 @@ import shutil  # Needed for efficient file copying
 
 WHEELS_RELEASE_URL = "https://api.github.com/repos/termux-user-repository/pypi-wheel-builder/releases/latest"
 DOCS_DIR = "docs"  # Define docs directory globally for consistency
+PACKAGES_LIST = ["pydantic", "numpy", "pillow"]
 
 
 # --- Helper Function for Downloading ---
@@ -146,7 +147,7 @@ def generate_packages_index(packages_dict):
 
                     # Check if this wheel needs local download and renaming
                     if "linux_aarch64" in wheel_name and (
-                        "pydantic" in wheel_name or "numpy" in wheel_name
+                        any(package in wheel_name for package in PACKAGES_LIST)
                     ):
                         needs_local_copy = True
                         display_name = wheel_name.replace(
